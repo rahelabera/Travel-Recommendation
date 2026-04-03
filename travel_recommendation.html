@@ -32,19 +32,24 @@
             <a href="#"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fab fa-youtube"></i></a>
         </div>  
-        <div class="hero-content">
-            <h1>EXPLORE DREAM DESTINATION</h1>
-            <p>
-            The Travel Recommendation App helps users explore popular travel destinations
-            through an interactive and user friendly interface. It allows users to search for
-            beaches, temples, countries, or specific country names to view related cities along
-            with images and descriptions. The app dynamically fetches data from a structured 
-            JSON file to display relevant results. It provides a simple and efficient way to 
-            discover and plan travel destinations.
-            </p>
-            <button class="book-btn">Book Now</button>
-        </div>
+            <div class="hero-content" id="hero-content">
+                <h1>EXPLORE DREAM DESTINATION</h1>
+                <p>
+                The Travel Recommendation App helps users explore popular travel destinations
+                through an interactive and user friendly interface. It allows users to search for
+                beaches, temples, countries, or specific country names to view related cities along
+                with images and descriptions. The app dynamically fetches data from a structured 
+                JSON file to display relevant results. It provides a simple and efficient way to 
+                discover and plan travel destinations.
+                </p>
+                <button class="book-btn">Book Now</button>
+            </div>
+            <div id="results-section" class="results-section" style="display:none; width:100%; margin:0 auto;">
+                <h1 style="color:orange; text-align:center; margin-top:30px; font-size:2.5rem;">Search Results</h1>
+                <div id="search-results" class="search-results" style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px; margin:30px auto 0 auto;"></div>
+            </div>
     </section>
-    
+    <!-- Ensure JS is loaded -->
+    <script src="travel_recommendation.js"></script>
 </body>
 </html>
