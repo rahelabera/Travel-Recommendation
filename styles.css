@@ -1,7 +1,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  background-image: url('city1.png');
+  background-image: url('./images/city.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -107,7 +107,6 @@ html, body {
   padding: 6px 12px;
   font-size: 1rem;
   cursor: pointer;
-  /* font-weight: 600; */
   transition: background 0.2s, color 0.2s;
 }
 
@@ -136,12 +135,7 @@ html, body {
   flex-shrink: 0;
 }
 .hero {
-  /* height: 100vh; */
   position: relative;
-  /* background-image: url('city1.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat; */
   display: flex;
   align-items: center;         
   justify-content: flex-start;  
@@ -199,22 +193,15 @@ html, body {
 /*About Section*/
 
 .about-hero {
-  /* height: 100vh; */
   position: relative;
   display: flex;
-  align-items: flex-start;          /* vertical center */
-  justify-content: flex-start;  /* align content left */
-  padding-left: 100px;          /* space for social icons */
+  align-items: flex-start;          
+  justify-content: flex-start;  
+  padding-left: 100px;         
   box-sizing: border-box;
 }
-/* .about-background {
-  background-image: url('city1.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-} */
+
 .about-hero-content {
-  /* max-width: 85%; */
   color: white;
   text-align: left;
   padding-bottom: 200px;
@@ -258,7 +245,6 @@ html, body {
 
 .team-card {
     background: transparent;
-    /* border-radius: 12px; */
     padding: 30px 20px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.08);
     transition: transform 0.3s, box-shadow 0.3s;
@@ -311,20 +297,19 @@ html, body {
   gap: 200px;
 }
 .contact-hero {
-  /* height: 100vh; */
   position: relative;
   display: flex;
-  align-items: center;          /* vertical center */
-  justify-content: center;  /* align content left */
-  padding-left: 100px;          /* space for social icons */
+  align-items: center;          
+  justify-content: center;  
+  padding-left: 100px;          
   box-sizing: border-box;
   color: #fff;
 }
 .contact-form {
-  background: transparent;   /* fully see-through */
+  background: transparent;   
   padding: 30px;
-  border-radius: 12px;       /* optional for rounded corners */
-  box-shadow: none;           /* remove any shadow */
+  border-radius: 12px;       
+  box-shadow: none;           
   width: 100%;
   max-width: 400px;
 }
@@ -346,8 +331,8 @@ html, body {
   padding: 10px 12px;
   margin: 10px 0 20px;
   border-radius: 6px;
-  border: 1px solid rgba(255,255,255,0.3);  /* optional subtle border */
-  background: rgba(255,255,255,0.05);       /* very subtle transparent background */
+  border: 1px solid rgba(255,255,255,0.3);  
+  background: rgba(255,255,255,0.05);       
   color: white;
   outline: none;
   font-size: 0.95rem;
@@ -360,15 +345,15 @@ html, body {
 .contact-form input,
 .contact-form textarea,
 .submit-btn {
-  width: 100%;            /* match the full width of the form */
-  box-sizing: border-box; /* include padding in width */
+  width: 100%;            
+  box-sizing: border-box; 
 }
 .submit-btn {
-  background: #12a76e;       /* nice green color */
-  color: #fff;               /* white text */
-  padding: 12px;             /* vertical padding */
-  border: none;              /* no border */
-  border-radius: 8px;        /* rounded corners */
+  background: #12a76e;       
+  color: #fff;               
+  padding: 12px;             
+  border: none;              
+  border-radius: 8px;        
   cursor: pointer;
   font-size: 1rem;
   font-weight: 600;
@@ -376,6 +361,6 @@ html, body {
 }
 
 .submit-btn:hover {
-  background: #0f8a5d;       /* slightly darker green on hover */
-  transform: scale(1.02);    /* subtle scale effect */
+  background: #0f8a5d;       
+  transform: scale(1.02);    
 }

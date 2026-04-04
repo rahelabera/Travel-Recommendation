@@ -11,7 +11,6 @@ const resultsContainer = document.getElementById('search-results');
 // Function to display results
 function displayResults(results) {
 
-    // Hide only the hero-content, keep social icons visible
     if (heroContent) heroContent.style.display = 'none';
     resultsSection.style.display = 'block';
     resultsContainer.innerHTML = '';
@@ -61,38 +60,46 @@ async function searchDestinations() {
 
     let results = [];
 
-    // Search countries and cities
-    data.countries.forEach(country => {
-        if (country.name.toLowerCase().includes(keyword)) {
+    if ('countries'.includes(keyword)) {
+        data.countries.forEach(country => {
             country.cities.forEach(city => results.push(city));
-        } else {
-            country.cities.forEach(city => {
-                // Improved: match on any word in city name
-                const cityNameWords = city.name.toLowerCase().split(/,|\s+/);
-                if (
-                    cityNameWords.some(word => word.includes(keyword)) ||
-                    city.name.toLowerCase().includes(keyword) ||
-                    city.description.toLowerCase().includes(keyword)
-                ) {
-                    results.push(city);
-                }
-            });
-        }
-    });
+        });
+    } else if ('temples'.includes(keyword)) {
+        results = data.temples.slice();
+    } else if ('beaches'.includes(keyword)) {
+        results = data.beaches.slice();
+    } else {
+        data.countries.forEach(country => {
+            if (country.name.toLowerCase().includes(keyword)) {
+                country.cities.forEach(city => results.push(city));
+            } else {
+                country.cities.forEach(city => {
+                    const cityNameWords = city.name.toLowerCase().split(/,|\s+/);
+                    if (
+                        cityNameWords.some(word => word.includes(keyword)) ||
+                        city.name.toLowerCase().includes(keyword) ||
+                        city.description.toLowerCase().includes(keyword)
+                    ) {
+                        results.push(city);
+                    }
+                });
+            }
+        });
 
-    // Search temples
-    data.temples.forEach(temple => {
-        if (temple.name.toLowerCase().includes(keyword) || temple.description.toLowerCase().includes(keyword)) {
-            results.push(temple);
-        }
-    });
+        // Search temples
+        data.temples.forEach(temple => {
+            if (temple.name.toLowerCase().includes(keyword) || temple.description.toLowerCase().includes(keyword)) {
+                results.push(temple);
+            }
+        });
 
-    // Search beaches
-    data.beaches.forEach(beach => {
-        if (beach.name.toLowerCase().includes(keyword) || beach.description.toLowerCase().includes(keyword)) {
-            results.push(beach);
-        }
-    });
+        // Search beaches
+        data.beaches.forEach(beach => {
+            if (beach.name.toLowerCase().includes(keyword) || beach.description.toLowerCase().includes(keyword)) {
+                results.push(beach);
+            }
+        });
+    }
 
     displayResults(results);
 }
