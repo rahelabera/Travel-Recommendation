@@ -60,7 +60,7 @@ async function searchDestinations() {
 
     let results = [];
 
-    if ('countries'.includes(keyword)) {
+    if ('countries'.includes(keyword) || 'country'.includes(keyword)) {
         data.countries.forEach(country => {
             country.cities.forEach(city => results.push(city));
         });
